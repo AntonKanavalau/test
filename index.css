@@ -1,0 +1,14 @@
+
+
+@import "style/headContainer.css";
+
+/*Default*/
+html {
+	font-size: 14px;
+	background-color: #F4F5FC;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
