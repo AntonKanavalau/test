@@ -20,8 +20,7 @@
 
 /*alignment for block elements*/
 #formSignUp input,
-#formSignUp select
-{
+#formSignUp select {
 	position: absolute;
 	width: 234.5px;
 	left: 50%;
@@ -33,6 +32,7 @@
 	background: transparent;
 	font-size: 1rem;
 	line-height: 16px;
+	color: #111;
 }
 
 #formSignUp label {
@@ -46,9 +46,8 @@
 }
 
 /*label action*/
-#formSignUp input:valid ~ label, #formSignUp input:focus  ~ label,
-#formSignUp select:valid ~ label, #formSignUp select:focus ~ label
-{
+#formSignUp input:valid ~ label, #formSignUp input:focus ~ label,
+#formSignUp select:valid ~ label, #formSignUp select:focus ~ label {
 	top: 0;
 	left: 0;
 	transform: translate(0, 0);
@@ -62,3 +61,35 @@
 	cursor: pointer;
 }
 
+/*style for data of birth and Gender*/
+.formSection_birthDay {
+	position: relative;
+}
+.other > * {
+	border-bottom: none;
+}
+
+.other #day, .other #month, .other #year {
+	position: absolute;
+	border-bottom: .7px solid #F2F2F2;
+	padding-bottom: 5.6px;
+	bottom: 10px;
+}
+
+.other #day {
+	left: 0;
+	width: 56px;
+	transform: translate(0%, -100%);
+}
+
+.other #month {
+	left: calc(56px + 9.8px);
+	width: 91px;
+	transform: translate(0, -100%);
+}
+
+.other #year {
+	left: 100%;
+	width: 68px;
+	transform: translate(-100%, -100%);
+}
