@@ -35,4 +35,21 @@
 .headContainer--content {
 	width: 37.7rem;
 	height: 100%;
+	padding: 38.52px 22px 32.48px 20.8px;
+	color: #111;
+	font-family:'Work Sans', sans-serif;
+	box-sizing: border-box;
+}
+
+.headContainer--content > h4 {
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 26px;
+	letter-spacing: -.46px;
+}
+
+.headContainer--content > h6 {
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 16px;
 }
