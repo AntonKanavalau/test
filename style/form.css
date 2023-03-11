@@ -72,8 +72,10 @@
 .other #day, .other #month, .other #year {
 	position: absolute;
 	border-bottom: .7px solid #F2F2F2;
+	margin-top: 5.3px;
 	padding-bottom: 5.6px;
-	bottom: 10px;
+	box-sizing: border-box;
+	line-height: 16.41px;
 }
 
 .other #day {
