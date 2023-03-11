@@ -33,6 +33,7 @@
 
 /*Form Container*/
 .headContainer--content {
+	position: relative;
 	width: 37.7rem;
 	height: 100%;
 	padding: 38.52px 22px 32.48px 20.8px;

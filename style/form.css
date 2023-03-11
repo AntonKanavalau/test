@@ -49,7 +49,7 @@
 #formSignUp input[type="text"]:valid ~ label, #formSignUp input[type="text"]:focus ~ label,
 #formSignUp input[type="email"]:valid ~ label, #formSignUp input[type="email"]:focus ~ label,
 #formSignUp select:valid ~ label, #formSignUp select:focus ~ label,
-#formSignUp input[type="password"] ~ label{
+#formSignUp input[type="password"] ~ label {
 	top: 0;
 	left: 0;
 	transform: translate(0, 0);
@@ -160,17 +160,34 @@
 	left: calc(12px + 6px + 33px + 19px + 12px);
 }
 
-/*have a account*/
+/*footer*/
 .haveAcc {
 	position: absolute;
-	bottom: 0;
+	top: calc(100% - 11px - 32.48px);
 	height: 15px;
 	color: #000;
 	font-size: 13px;
 	font-weight: 200;
+	transform: translate(0, -100%);
 }
 
-.haveAcc a{
+.haveAcc a {
 	color: #5A61ED;
 	font-weight: 600;
+}
+
+button[type="submit"] {
+	position: absolute;
+	cursor: pointer;
+	width: 154px;
+	height: 32px;
+	white-space: nowrap;
+	color: #FFF;
+	font-style: normal;
+	font: 400 1rem/18px 'Manrope', sans-serif;
+	background-color: #5A61ED;
+	border: none;
+	transform: translate(-100%, -100%);
+	left: calc(100% - 22px);
+	top: calc(100% - 32.48px)
 }
