@@ -48,7 +48,8 @@
 /*label action*/
 #formSignUp input[type="text"]:valid ~ label, #formSignUp input[type="text"]:focus ~ label,
 #formSignUp input[type="email"]:valid ~ label, #formSignUp input[type="email"]:focus ~ label,
-#formSignUp select:valid ~ label, #formSignUp select:focus ~ label {
+#formSignUp select:valid ~ label, #formSignUp select:focus ~ label,
+#formSignUp input[type="password"] ~ label{
 	top: 0;
 	left: 0;
 	transform: translate(0, 0);
@@ -159,4 +160,17 @@
 	left: calc(12px + 6px + 33px + 19px + 12px);
 }
 
+/*have a account*/
+.haveAcc {
+	position: absolute;
+	bottom: 0;
+	height: 15px;
+	color: #000;
+	font-size: 13px;
+	font-weight: 200;
+}
 
+.haveAcc a{
+	color: #5A61ED;
+	font-weight: 600;
+}
