@@ -45,6 +45,10 @@
 	transition: all 0.5s ease 0s;
 }
 
+/*#formSignUp input[type="text"]:invalid {
+	border-bottom: 0.7px solid #f20000;
+}*/
+
 /*label action*/
 #formSignUp input[type="text"]:valid ~ label, #formSignUp input[type="text"]:focus ~ label,
 #formSignUp input[type="email"]:valid ~ label, #formSignUp input[type="email"]:focus ~ label,
@@ -100,11 +104,6 @@
 }
 
 /*style for gender*/
-.formSection_gender {
-	/*	position: static;
-		display: block;*/
-}
-
 .formSection_gender > p {
 	top: 0;
 	left: 0;
@@ -125,6 +124,7 @@
 	border-radius: 50%;
 	display: grid;
 	place-content: center;
+	cursor: pointer;
 }
 
 #formSignUp input[type="radio"]::before {
@@ -176,7 +176,7 @@
 	font-weight: 600;
 }
 
-button[type="submit"] {
+#submit {
 	position: absolute;
 	cursor: pointer;
 	width: 154px;

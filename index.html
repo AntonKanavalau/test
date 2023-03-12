@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="index.css"/>
+		<script src="app.js" type="module"></script>
 		<title>Sign up</title>
 	</head>
 	<body>
@@ -13,7 +14,7 @@
 			<section class="headContainer--content">
 				<h4>New user?</h4>
 				<h6>Use the form below to create your account.</h6>
-				<form id="formSignUp" action="#" name="newUser">
+				<form id="formSignUp" action="#" name="formSignUp">
 					<section class="formSection">
 						<div class="formSection_fName">
 							<input type="text" id="firstName" required>
@@ -26,8 +27,7 @@
 					</section>
 					<section class="formSection">
 						<div class="formSection_nationality">
-							<select id="nationality" required>
-								<option value=""></option>
+							<select id="nationality">
 								<option value="American">American</option>
 								<option value="European">European</option>
 								<option value="Eastern">Eastern</option>
@@ -180,7 +180,7 @@
 					</section>
 				</form>
 				<p class="haveAcc">Have an account? <a href="#">Login</a></p>
-				<button type="submit" form="formSignUp">Complete Signup</button>
+				<button id="submit" type="submit" form="formSignUp">Complete Signup</button>
 			</section>
 		</div>
 	</body>

@@ -1,5 +1,6 @@
 @import "style/headContainer.css";
 @import "style/form.css";
+@import "style/changeStyle.css";
 
 /*Default*/
 html {
@@ -10,4 +11,11 @@ html {
 *, input {
 	margin: 0;
 	padding: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+	box-shadow: 0 0 0 30px transparent inset !important;
 }
