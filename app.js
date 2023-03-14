@@ -17,12 +17,24 @@ const btnSubmit = document.getElementById('submit');
 
 btnSubmit.addEventListener('click', checkForm);
 
-/*First latter uppercase*/
+/*First latter uppercase (first and last names)*/
 firstName.addEventListener("input", toUpperCase);
 lastName.addEventListener("input", toUpperCase);
 
 function toUpperCase() {
 	this.value = this.value[0].toUpperCase() + this.value.slice(1);
+}
+
+/*Check password*/
+password.addEventListener('input', validation);
+let checkPassUpper = (s) => /[A-ZА-Я]/gm.test(s); //check uppercase
+let checkPassNumber = (s) => /[0-9]/gm.test(s); // check number
+function validation() {
+	if (checkPassUpper(this.value) && checkPassNumber(this.value) && this.value.length >= 8) {
+		document.querySelector('.formSection_pass').classList.remove('redLine');
+	} else {
+		document.querySelector('.formSection_pass').classList.add('redLine');
+	}
 }
 
 /*btnSubmit.addEventListener('click', function (event) {
@@ -51,47 +63,38 @@ console.log(formInput);
 */
 
 
-let checkPassUpper = (s) => /[A-ZА-Я]/gm.test(s);
-let checkPassNumber = (s) => /[0-9]/gm.test(s);
 
-function checkPassword(char){
-	if(checkPassUpper(char.value) === true  && checkPassNumber(char.value) === true) {
-		console.log("true?");
-		document.querySelector(`.${char.parentElement.classList[0]}`).classList.remove('redLine');
-	} else {
-		document.querySelector(`.${char.parentElement.classList[0]}`).classList.add('redLine');
-	}
 
-}
+
 
 function checkForm() {
 
 
-/*
-	let password = document.getElementById('password');
-*/
+	/*
+		let password = document.getElementById('password');
+	*/
 	for (let char of formInput) {
-		if(char.type === password){
+		if (char.type === password) {
 			checkPassword(char);
 		}
 
-		if(char.value.length > 0){
-						console.log(char);
+		if (char.value.length > 0) {
+			console.log(char);
 			checkPassword(char);
-/*
-				console.log(char.value.length);
-*/
-						/*		console.log(char.parentElement);
-						console.log(char.parentElement.classList[0]);*/
+			/*
+							console.log(char.value.length);
+			*/
+			/*		console.log(char.parentElement);
+			console.log(char.parentElement.classList[0]);*/
 
 			document.querySelector(`.${char.parentElement.classList[0]}`).classList.remove('redLine');
 
-		} else if (char.type === password){
+		} else if (char.type === password) {
 			checkPassword(char);
-}
-/*
-			console.log(password.value);
-			console.log(char.value);*/
+		}
+		/*
+					console.log(password.value);
+					console.log(char.value);*/
 
 		else {
 			checkPassword(char);
