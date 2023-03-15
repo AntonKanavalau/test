@@ -191,3 +191,17 @@
 	left: calc(100% - 22px);
 	top: calc(100% - 32.48px)
 }
+
+.passError {
+	position: absolute;
+	bottom: -25px;
+	color: red;
+	font-size: 10px;
+}
+
+.conPassError {
+	position: absolute;
+	bottom: -15px;
+	color: red;
+	font-size: 10px;
+}

@@ -1,23 +1,32 @@
-import {formClass} from "./script/formClass.js"
+import {} from "./script/formClass.js";
 
-/*Elements*/
+/*Variables*/
 const form = document.forms['formSignUp'];
-/*
-form.onsubmit = validateForm;
-*/
-
 const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
-const nationality = document.getElementById('nationality');
-const eMail = document.getElementById('eMail');
-let password = document.getElementById('password');
+const password = document.getElementById('password');
 const confirmPass = document.getElementById('confirmPass');
-
 const btnSubmit = document.getElementById('submit');
 
+
+/*Submit form*/
 btnSubmit.addEventListener('click', checkForm);
 
-/*First latter uppercase (first and last names)*/
+const formInput = [...form.getElementsByTagName('input')]; //array form input
+function checkForm() {
+	for (let char of formInput) {
+		if( char.value.length === 0){
+			document.querySelector(`.${char.parentElement.classList[0]}`).classList.add('redLine');
+		} else {
+			document.querySelector(`.${char.parentElement.classList[0]}`).classList.remove('redLine');
+		}
+	}
+
+	validationPass();
+	validationConfPass();
+}
+
+/*First latter uppercase (for first and last names)*/
 firstName.addEventListener("input", toUpperCase);
 lastName.addEventListener("input", toUpperCase);
 
@@ -26,80 +35,56 @@ function toUpperCase() {
 }
 
 /*Check password*/
-password.addEventListener('input', validation);
-let checkPassUpper = (s) => /[A-ZА-Я]/gm.test(s); //check uppercase
-let checkPassNumber = (s) => /[0-9]/gm.test(s); // check number
-function validation() {
-	if (checkPassUpper(this.value) && checkPassNumber(this.value) && this.value.length >= 8) {
+password.addEventListener('input', validationPass);
+const checkPassUpper = (s) => /[A-ZА-Я]/gm.test(s); //check uppercase
+const checkPassNumber = (s) => /[0-9]/gm.test(s); // check number
+
+function validationPass() {
+	if (checkPassUpper(password.value) && checkPassNumber(password.value) && password.value.length >= 8) {
 		document.querySelector('.formSection_pass').classList.remove('redLine');
+		if (document.querySelector('.formSection_pass').querySelector('.passError')) {
+			document.querySelector('.formSection_pass').querySelector('.passError').remove();
+		}
 	} else {
+		checkPassError();
 		document.querySelector('.formSection_pass').classList.add('redLine');
 	}
 }
 
-/*btnSubmit.addEventListener('click', function (event) {
-	event.preventDefault();
-	console.log('clicked on validate');
-})*/
+function checkPassError() {
+	const html = `<span class="passError">Password must have uppercase letters, numbers and 8 symbols.</span>`;
 
-function validateForm() {
-	event.preventDefault();
-	console.log('clicked on validate');
-	console.log('firstName: ', firstName.value);
-	console.log('lastName: ', lastName.value);
-	console.log('nationality: ', nationality.value);
-	console.log('eMail: ', eMail.value);
-	console.log('password: ', password.value);
-	console.log('confirmPass: ', confirmPass.value);
+	if (document.querySelector('.formSection_pass').querySelector('.passError')) {
+		return true;
+	} else {
+		document.querySelector('.formSection_pass').insertAdjacentHTML('beforeend', html);
+	}
 }
 
-/*const formInput = form.getElementsByTagName('input')*/
-const formInput = [...form.getElementsByTagName('input')];
+/*Check confirm password*/
+confirmPass.addEventListener('input', validationConfPass);
 
-console.log(formInput);
+function validationConfPass() {
+	const passValue = password.value;
+	const confPassValue = confirmPass.value;
 
-/*
-/[A-Za-zА-Яа-я0-9]/gm.test(char.value)
-*/
-
-
-
-
-
-
-function checkForm() {
-
-
-	/*
-		let password = document.getElementById('password');
-	*/
-	for (let char of formInput) {
-		if (char.type === password) {
-			checkPassword(char);
+	if (passValue === confPassValue) {
+		document.querySelector('.formSection_confPass').classList.remove('redLine');
+		if (document.querySelector('.formSection_confPass').querySelector('.passError')) {
+			document.querySelector('.formSection_confPass').querySelector('.passError').remove();
 		}
-
-		if (char.value.length > 0) {
-			console.log(char);
-			checkPassword(char);
-			/*
-							console.log(char.value.length);
-			*/
-			/*		console.log(char.parentElement);
-			console.log(char.parentElement.classList[0]);*/
-
-			document.querySelector(`.${char.parentElement.classList[0]}`).classList.remove('redLine');
-
-		} else if (char.type === password) {
-			checkPassword(char);
-		}
-		/*
-					console.log(password.value);
-					console.log(char.value);*/
-
-		else {
-			checkPassword(char);
-			document.querySelector(`.${char.parentElement.classList[0]}`).classList.add('redLine');
-		}
+	} else {
+		checkConfPassError();
+		document.querySelector('.formSection_confPass').classList.add('redLine');
 	}
+}
 
+function checkConfPassError() {
+	const html = `<span class="conPassError">Passwords must match.</span>`;
+
+	if (document.querySelector('.formSection_confPass').querySelector('.conPassError')) {
+		return true;
+	} else {
+		document.querySelector('.formSection_confPass').insertAdjacentHTML('beforeend', html);
+	}
 }
