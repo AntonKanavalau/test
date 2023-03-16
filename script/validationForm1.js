@@ -1,7 +1,7 @@
-import {} from "./script/formClass.js";
-
 /*Variables*/
-const form = document.forms['formSignUp'];
+import {submitForm} from "./submitForm.js";
+
+export const form = document.forms['formSignUp'];
 const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
 const password = document.getElementById('password');
@@ -10,12 +10,17 @@ const btnSubmit = document.getElementById('submit');
 
 
 /*Submit form*/
+/*
 btnSubmit.addEventListener('click', checkForm);
+*/
+btnSubmit.addEventListener('submit', submitForm);
 
 const formInput = [...form.getElementsByTagName('input')]; //array form input
-function checkForm() {
+export function checkForm() {
+	let error =0;
+
 	for (let char of formInput) {
-		if( char.value.length === 0){
+		if (char.value.length === 0) {
 			document.querySelector(`.${char.parentElement.classList[0]}`).classList.add('redLine');
 		} else {
 			document.querySelector(`.${char.parentElement.classList[0]}`).classList.remove('redLine');
@@ -40,10 +45,12 @@ const checkPassUpper = (s) => /[A-ZА-Я]/gm.test(s); //check uppercase
 const checkPassNumber = (s) => /[0-9]/gm.test(s); // check number
 
 function validationPass() {
+	let spanError = document.querySelector('.formSection_pass').querySelector('.passError');
+
 	if (checkPassUpper(password.value) && checkPassNumber(password.value) && password.value.length >= 8) {
 		document.querySelector('.formSection_pass').classList.remove('redLine');
-		if (document.querySelector('.formSection_pass').querySelector('.passError')) {
-			document.querySelector('.formSection_pass').querySelector('.passError').remove();
+		if (spanError) {
+			spanError.remove();
 		}
 	} else {
 		checkPassError();
@@ -70,8 +77,8 @@ function validationConfPass() {
 
 	if (passValue === confPassValue) {
 		document.querySelector('.formSection_confPass').classList.remove('redLine');
-		if (document.querySelector('.formSection_confPass').querySelector('.passError')) {
-			document.querySelector('.formSection_confPass').querySelector('.passError').remove();
+		if (document.querySelector('.formSection_confPass').querySelector('.conPassError')) {
+			document.querySelector('.formSection_confPass').querySelector('.conPassError').remove();
 		}
 	} else {
 		checkConfPassError();

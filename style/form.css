@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400&display=swap');
+@import "animation.css";
 
 #formSignUp {
 	margin-top: 20px;
@@ -114,6 +115,8 @@
 
 /*style for radiobutton in gender block*/
 #formSignUp input[type="radio"] {
+	display: grid;
+	place-content: center;
 	left: auto;
 	transform: translate(0, -100%);
 	appearance: none;
@@ -122,8 +125,6 @@
 	height: 12px;
 	border: 0.7px solid #5A61ED;
 	border-radius: 50%;
-	display: grid;
-	place-content: center;
 	cursor: pointer;
 }
 
@@ -192,6 +193,7 @@
 	top: calc(100% - 32.48px)
 }
 
+/*error password*/
 .passError {
 	position: absolute;
 	bottom: -25px;
@@ -199,6 +201,7 @@
 	font-size: 10px;
 }
 
+/*error config password*/
 .conPassError {
 	position: absolute;
 	bottom: -15px;
