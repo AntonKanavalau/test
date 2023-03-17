@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="index.css"/>
+		<link rel="stylesheet" type="text/css" href="index.css">
 		<script src="script/validationForm.js" type="module"></script>
 		<title>Sign up</title>
 	</head>
@@ -15,7 +15,7 @@
 				<h4>New user?</h4>
 				<h6>Use the form below to create your account.</h6>
 				<form id="formSignUp" action="#" name="formSignUp">
-					<section class="formSection">
+					<div class="formSection">
 						<div class="formSection_fName">
 							<input type="text" id="firstName" class="_req">
 							<label for="firstName">First Name</label>
@@ -24,8 +24,8 @@
 							<input type="text" id="lastName" class="_req">
 							<label for="lastName">Last Name</label>
 						</div>
-					</section>
-					<section class="formSection">
+					</div>
+					<div class="formSection">
 						<div class="formSection_nationality">
 							<select id="nationality">
 								<option value="American">American</option>
@@ -41,8 +41,8 @@
 							<input type="email" id="eMail" class="_req">
 							<label for="eMail">E-mail</label>
 						</div>
-					</section>
-					<section class="formSection other">
+					</div>
+					<div class="formSection other">
 						<div class="formSection_birthDay">
 							<select id="day">
 								<option value="1">1</option>
@@ -89,7 +89,7 @@
 								<option value="September">September</option>
 								<option value="October">October</option>
 								<option value="November">November</option>
-								<option value=December7">December</option>
+								<option value="December7">December</option>
 							</select>
 							<select id="year">
 								<option value="2023">2023</option>
@@ -167,8 +167,8 @@
 							<input type="radio" id="female" name="gender" checked>
 							<label for="female">Female</label>
 						</div>
-					</section>
-					<section class="formSection password">
+					</div>
+					<div class="formSection password">
 						<div class="formSection_pass">
 							<input type="password" id="password" minlength="8" class="_req">
 							<label for="password">Password</label>
@@ -177,7 +177,7 @@
 							<input type="password" id="confirmPass" minlength="8" class="_req">
 							<label for="confirmPass">Confirm Password</label>
 						</div>
-					</section>
+					</div>
 				</form>
 				<p class="haveAcc">Have an account? <a href="#">Login</a></p>
 				<button id="submit" type="submit" form="formSignUp">Complete Signup</button>
