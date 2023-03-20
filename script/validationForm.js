@@ -1,8 +1,8 @@
 'use strict'
 
+export const form = document.forms['formSignUp'];
 
 document.addEventListener('DOMContentLoaded', () => {
-	const form = document.forms['formSignUp'];
 	form.addEventListener('submit', formSend);
 
 	async function formSend(e) {
@@ -11,11 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		let error = formValidate();
 
 		if (error === 0) {
-
+			clearForm();
 		} else {
-			alert('Fill in all fields.');
+			buttonError();
 		}
-
 	}
 
 	function formValidate() {
@@ -76,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		return error;
 	}
 
+
 	/*add redline*/
 	function formAddError(input) {
 		input.parentElement.classList.add('redLine');
@@ -106,11 +106,16 @@ document.addEventListener('DOMContentLoaded', () => {
 		} else {
 			input.parentElement.style.color = 'red';
 			input.parentElement.insertAdjacentHTML('beforeend', html);
+			setTimeout(() => {
+				input.parentElement.querySelector('.emailError').classList.add('errorView');
+			}, 100);
 		}
 	}
 
 	function emailRemoveError(input) {
-		input.parentElement.querySelector('.emailError').remove();
+		if (input.parentElement.querySelector('.emailError')) {
+			input.parentElement.querySelector('.emailError').remove();
+		}
 	}
 
 	/*conf error text*/
@@ -120,11 +125,16 @@ document.addEventListener('DOMContentLoaded', () => {
 			return true;
 		} else {
 			input.parentElement.insertAdjacentHTML('beforeend', html);
+			setTimeout(() => {
+				input.parentElement.querySelector('.passError').classList.add('errorPassView');
+			}, 100);
 		}
 	}
 
 	function passRemoveError(input) {
-		input.parentElement.querySelector('.passError').remove();
+		if (input.parentElement.querySelector('.passError')) {
+			input.parentElement.querySelector('.passError').remove();
+		}
 	}
 
 
@@ -148,7 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	/*check confirm password*/
 	function confPasswordTest(input) {
-		if (input.value !== input.password) {
+		let passwordValue = document.getElementById('password').value;
+		if ((input.value == 0) || (input.value !== passwordValue)) {
 			return true;
 		}
 	}
@@ -160,12 +171,44 @@ document.addEventListener('DOMContentLoaded', () => {
 			return true;
 		} else {
 			input.parentElement.insertAdjacentHTML('beforeend', html);
+			setTimeout(() => {
+				input.parentElement.querySelector('.conPassError').classList.add('errorView');
+			}, 100);
 		}
 	}
 
 	function confPassRemoveError(input) {
-		input.parentElement.querySelector('.conPassError').remove();
+		if (input.parentElement.querySelector('.conPassError')) {
+			input.parentElement.querySelector('.conPassError').remove();
+		}
 	}
+
+	/*clear form*/
+	function clearForm() {
+		document.querySelector('.toOpacity').classList.add('opacity');
+		form.reset();
+
+		setTimeout(() => {
+			document.querySelector('.toOpacity').remove();
+		}, 250);
+	}
+
+	/*thank for registration */
+	function addThanks() {
+		let html = `<h4>Thank You!</h4>
+<h6>you registered!</h6>`;
+
+		document.querySelector('.headContainer--content').insertAdjacentHTML('afterbegin', html);
+	}
+
+	/*button error action*/
+	function buttonError() {
+		document.getElementById('submit').classList.add('buttonError');
+		setTimeout(() => {
+			document.getElementById('submit').classList.remove('buttonError');
+		}, 500);
+	}
+
 })
 
 
@@ -176,3 +219,4 @@ document.getElementById('lastName').addEventListener('input', nameToUpperCase);
 function nameToUpperCase() {
 	this.value = this.value[0].toUpperCase() + this.value.slice(1);
 }
+

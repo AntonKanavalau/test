@@ -41,17 +41,41 @@
 	color: #111;
 	font-family:'Work Sans', sans-serif;
 	box-sizing: border-box;
+	opacity: 1;
 }
 
-.headContainer--content > h4 {
+/*opacity after validation */
+.opacity {
+	opacity: 0;
+	transition: all .25s ease 0s;
+}
+
+.headContainer--content  h4 {
 	font-weight: 400;
 	font-size: 22px;
 	line-height: 26px;
 	letter-spacing: -.46px;
 }
 
-.headContainer--content > h6 {
+.headContainer--content  h6 {
 	font-weight: 400;
 	font-size: 1rem;
 	line-height: 16px;
 }
+
+/*footer*/
+.headContainer--content .haveAcc {
+	position: absolute;
+	top: calc(100% - 11px - 32.48px);
+	height: 15px;
+	color: #000;
+	font-size: 13px;
+	font-weight: 200;
+	transform: translate(0, -100%);
+}
+
+.headContainer--content .haveAcc a {
+	color: #5A61ED;
+	font-weight: 600;
+}
+
