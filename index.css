@@ -1,6 +1,7 @@
 @import "style/headContainer.css";
 @import "style/form.css";
-@import "style/changeStyle.css";
+@import "style/error.css";
+@import "style/animation.css";
 
 /*Default*/
 html {

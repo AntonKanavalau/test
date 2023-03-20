@@ -1,5 +1,33 @@
-.errorView{
+:root {
+	--svg-color: #f9faff; /*svg color*/
+}
+
+.errorView {
 	bottom: -25px;
 	opacity: 1;
 	transition: all 0.5s ease 0s;
+}
+
+#shape {
+	position: absolute;
+	width: 411px;
+	height: 411px;
+	fill: none;
+	stroke: var(--svg-color);
+	mask-size: cover;
+	left: 53.83%;
+	right: -15.64%;
+	top: 26.2%;
+	bottom: -11.64%;
+}
+
+#shape * {
+	stroke-width: 4px;
+	fill: var(--svg-color);
+	fill-opacity: 0;
+	transition: fill-opacity .7s;
+}
+
+#shape.fillAdd * {
+	fill-opacity: 1;
 }

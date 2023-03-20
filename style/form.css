@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400&display=swap');
-@import "animation.css";
 
 #formSignUp {
 	margin-top: 20px;
@@ -186,28 +185,4 @@
 	transform: translate(-100%, -100%);
 	left: calc(100% - 22px);
 	top: calc(100% - 32.48px)
-}
-
-/*error password*/
-.passError {
-	position: absolute;
-	bottom: -25px;
-	color: red;
-	font-size: 10px;
-}
-
-/*error config password*/
-.conPassError {
-	position: absolute;
-	bottom: -15px;
-	color: red;
-	font-size: 10px;
-}
-
-/*error config email*/
-.emailError{
-	position: absolute;
-	bottom: -15px;
-	color: red;
-	font-size: 10px;
 }
