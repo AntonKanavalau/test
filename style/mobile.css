@@ -1,0 +1,51 @@
+@media (max-device-width: 768px) {
+	/*Sign up block*/
+	.headContainer {
+		position: static;
+		display: block;
+		width: auto;
+		height: auto;
+		margin: 0;
+	}
+
+	.headContainer--label{
+		position: fixed;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 9.8rem;
+		background-color: #5A61ED;
+	}
+
+	/*Sign up text*/
+	.headContainer--label > h3 {
+		position: static;
+		height: 4.5rem;
+		width: 162px;
+		white-space: nowrap;
+		color: #FFF;
+		font: 400 3.5rem/4.5rem 'Manrope', sans-serif;
+		letter-spacing: .5px;
+		transform:translate(0, 0) rotate(0deg);
+	}
+
+	/*Form Block*/
+	.headContainer--content {
+		position: static;
+		width: 100%;
+		height: calc(100vh - 9.8rem);
+		padding: 175.72px 22px 32.48px 20.8px;
+		color: #111;
+		font-family:'Work Sans', sans-serif;
+		opacity: 1;
+		z-index: 1;
+	}
+
+	#formSignUp > * {
+		display: flex;
+		gap: 1rem;
+		margin-bottom: 16px;
+		flex-direction: column;
+	}
+}

@@ -2,6 +2,7 @@
 @import "style/form.css";
 @import "style/error.css";
 @import "style/svg.css";
+@import "style/mobile.css";
 
 /*Default*/
 html {

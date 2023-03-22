@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		if (error === 0) {
 			clearForm();
+			addThanks();
 		} else {
 			buttonError();
 		}
@@ -186,19 +187,25 @@ document.addEventListener('DOMContentLoaded', () => {
 	/*clear form*/
 	function clearForm() {
 		document.querySelector('.toOpacity').classList.add('opacity');
+		document.getElementById('shape').classList.add('opacity');
 		form.reset();
 
 		setTimeout(() => {
 			document.querySelector('.toOpacity').remove();
+			document.getElementById('shape').remove();
 		}, 250);
 	}
 
 	/*thank for registration */
 	function addThanks() {
-		let html = `<h4>Thank You!</h4>
-<h6>you registered!</h6>`;
-
+		let html = `<div class="headContainer--content__thank">
+									<h4>Thank You!</h4>
+									<h6>you registered!</h6>
+								</div>`;
 		document.querySelector('.headContainer--content').insertAdjacentHTML('afterbegin', html);
+		setTimeout(() => {
+			document.querySelector('.headContainer--content__thank').classList.add('reOpacity');
+		}, 250);
 	}
 
 	/*button error action*/
