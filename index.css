@@ -2,7 +2,10 @@
 @import "style/form.css";
 @import "style/error.css";
 @import "style/svg.css";
-@import "style/mobile.css";
+@import "style/mobile/mobile__headContainer.css";
+@import "style/mobile/mobile__form.css";
+@import "style/mobile/mobile__error.css";
+@import "style/mobile/mobile__svg.css";
 
 /*Default*/
 html {

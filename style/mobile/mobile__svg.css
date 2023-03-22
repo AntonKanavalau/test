@@ -1,0 +1,30 @@
+@media (max-device-width: 768px) {
+	:root {
+		--svg-color: #f9faff; /*svg color*/
+	}
+
+	#shape {
+		position: fixed;
+		width: 411px;
+		height: 411px;
+		fill: none;
+		stroke: var(--svg-color);
+		left: auto;
+		top: calc(100% - 26.2%);
+		right: -22px;
+		bottom: 0;
+		z-index: 0;
+		transform: scale(1.75);
+	}
+
+	#shape * {
+		stroke-width: 4px;
+		fill: var(--svg-color);
+		fill-opacity: 0;
+		transition: fill-opacity .7s;
+	}
+
+	#shape.fillAdd * {
+		fill-opacity: 1;
+	}
+}

@@ -1,0 +1,167 @@
+@media (max-device-width: 768px) {
+	/*form*/
+	#formSignUp {
+		margin-top: 40px;
+	}
+
+	#formSignUp > * {
+		display: flex;
+		flex-direction: column;
+		gap: 5rem;
+		margin-bottom: 64px;
+	}
+
+	/*paired block alignment*/
+	.formSection > * {
+		position: relative;
+		width: 100%;
+		height: 126px;
+		border-bottom: 2.1px solid #F2F2F2;
+		opacity: 0;
+		transform: translateY(30px);
+	}
+
+	/*animation formSection block*/
+	.reOpacity {
+		opacity: 1;
+		transform: translateY(0);
+		transition: all .5s ease 0s;
+	}
+
+	.toOpacity {
+		display: block;
+		position: static;
+		margin-bottom: 2rem;
+	}
+
+	/*alignment for block elements*/
+	#formSignUp input,
+	#formSignUp select {
+		position: absolute;
+		width: 100%;
+		left: 50%;
+		padding-left: .4px;
+		top: calc(100% - 6.3px);
+		transform: translate(-50%, -100%);
+		border: none;
+		outline: none;
+		background: transparent;
+		font-size: 3rem;
+		line-height: 48px;
+		color: #111;
+		text-overflow: ellipsis;
+	}
+
+	#formSignUp label {
+		line-height: 3rem;
+		position: absolute;
+		pointer-events: none;
+		top: 0;
+		left: 0;
+		transform: translate(0, 0);
+		font-size: 36px;
+		color: #7C7C7C;
+		transition: all 0.5s ease 0s;
+	}
+
+	/*select*/
+	.other #day, .other #month, .other #year {
+		position: absolute;
+		border-bottom: 2.1px solid #F2F2F2;
+		margin-top: 5.3px;
+		padding-bottom: 5.6px;
+		box-sizing: border-box;
+		line-height: 49.23px;
+	}
+
+	.other #day {
+		left: 0;
+		width: 168px;
+		transform: translate(0%, -100%);
+		box-sizing: border-box;
+	}
+
+	.other #month {
+		left: calc(56px + 168px);
+		width: 273px;
+		transform: translate(0, -100%);
+		box-sizing: border-box;
+	}
+
+	.other #year {
+		left: 100%;
+		width: 204px;
+		transform: translate(-100%, -100%);
+		box-sizing: border-box;
+	}
+
+	/*style for gender*/
+	.formSection_gender > p {
+		top: 0;
+		left: 0;
+		transform: translate(0, 0);
+		font-size: 36px;
+		color: #7C7C7C;
+	}
+
+	/*style for radiobutton in gender block*/
+	#formSignUp input[type="radio"] {
+		display: grid;
+		place-content: center;
+		left: auto;
+		transform: translate(0, -100%);
+		appearance: none;
+		background-color: transparent;
+		width: 36px;
+		height: 36px;
+		border: 2.1px solid #5A61ED;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+
+	#formSignUp input[type="radio"]::before {
+		content: "";
+		width: 18px;
+		height: 18px;
+		border-radius: 50%;
+		transform: scale(0);
+		transition: 120ms transform ease-in-out;
+		background-color: #5A61ED;
+	}
+
+	#formSignUp input[type="radio"]:checked::before {
+		transform: scale(1);
+	}
+
+	#formSignUp input[type="radio"] ~ label {
+		width: 99px;
+		font-size: 3rem;
+		line-height: 48px;
+		transform: translate(0, -100%);
+	}
+
+	#formSignUp #male ~ label {
+		left: calc(36px + 18px);
+	}
+
+	#formSignUp #female {
+		left: calc(36px + 99px + 57px);
+	}
+
+	#formSignUp #female ~ label {
+		left: calc(36px + 99px + 57px + 36px + 18px);
+	}
+
+	/*button*/
+	#submit {
+		position: static;
+		cursor: pointer;
+		width: 308px;
+		height: 96px;
+		white-space: nowrap;
+		color: #FFF;
+		font-style: normal;
+		font: 400 2rem/18px 'Manrope', sans-serif;
+		transform: translate(0, 0);
+	}
+}

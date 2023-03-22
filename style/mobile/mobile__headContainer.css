@@ -1,0 +1,58 @@
+@media (max-device-width: 768px) {
+	/*Sign up block*/
+	.headContainer {
+		position: static;
+		display: block;
+		width: auto;
+		height: auto;
+		margin: 0;
+	}
+
+	.headContainer--label{
+		position: static;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 9.8rem;
+	}
+
+	/*Sign up text*/
+	.headContainer--label > h3 {
+		position: static;
+		height: 5.5rem;
+		width: auto;
+		font: 400 4.5rem/4.5rem 'Manrope', sans-serif;
+		transform:translate(0, 0) rotate(0deg);
+	}
+
+	/*Form Block*/
+	.headContainer--content {
+		width: 100%;
+		height: 100%;
+		padding: 38.52px 22px 32.48px 20.8px;
+	}
+
+	/*top title*/
+	.headContainer--content  h4 {
+		font-weight: 400;
+		font-size: 66px;
+		line-height: 78px;
+		letter-spacing: -.46px;
+	}
+
+	.headContainer--content  h6 {
+		font-weight: 400;
+		font-size: 3rem;
+		line-height: 48px;
+	}
+
+	.headContainer--content .haveAcc {
+		position: static;
+		color: #000;
+		font-size: 39px;
+		font-weight: 200;
+		padding-top: 2rem;
+		box-sizing: border-box;
+	}
+}

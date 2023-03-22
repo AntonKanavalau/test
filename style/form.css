@@ -46,7 +46,7 @@
 }
 
 #formSignUp label {
-	line-height: 14px;
+	line-height: 1rem;
 	position: absolute;
 	pointer-events: none;
 	top: 0;

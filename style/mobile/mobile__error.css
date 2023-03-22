@@ -1,0 +1,78 @@
+@media (max-device-width: 768px) {
+	:root {
+		--font-sice: 30px;
+	}
+
+	/*error red line*/
+	.redLine {
+		border-bottom: 2.1px solid #f20000;
+	}
+
+	/*error password*/
+	.passError {
+		position: absolute;
+		bottom: -105px;
+		opacity: 0;
+		color: red;
+		font-size: var(--font-sice);
+		transition: all .25s ease 0s;
+	}
+
+	/*error config password*/
+	.conPassError {
+		position: absolute;
+		bottom: -75px;
+		opacity: 0;
+		color: red;
+		font-size: var(--font-sice);
+		transition: all .25s ease 0s;
+	}
+
+	/*error config email*/
+	.emailError{
+		position: absolute;
+		bottom: -75px;
+		opacity: 0;
+		color: red;
+		font-size: var(--font-sice);
+		transition: all .25s ease 0s;
+	}
+
+	/*password error text animation*/
+	.errorPassView {
+		bottom: -75px;
+		opacity: 1;
+	}
+
+	/*other error text animation*/
+	.errorView {
+		bottom: -45px;
+		opacity: 1;
+	}
+
+	/*animation button error*/
+	.buttonError {
+		animation: .5s alternate buttonError;
+	}
+
+	@keyframes buttonError {
+		0% {
+			left: calc(100% - 22px);
+		}
+		20% {
+			left: calc(100% - 27px);
+		}
+		40% {
+			left: calc(100% - 15px);
+		}
+		60% {
+			left: calc(100% - 27px);
+		}
+		80% {
+			left: calc(100% - 15px);
+		}
+		100% {
+			left: calc(100% - 27px);
+		}
+	}
+}
