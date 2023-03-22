@@ -9,8 +9,8 @@ import {form} from './validationForm.js'
 			for (let k = 0; k < elem[i].children.length; k++) {
 				setTimeout(() => {
 					elem[i].children[k].classList.add('reOpacity');
-				}, (k + 1) * 100);
+				}, (k + 1) * 150);
 			}
-		}, (i + 1) * 200);
+		}, (i + 1) * 150);
 	}
 }
